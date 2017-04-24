@@ -10,5 +10,27 @@
       <input type="submit" value="Upload Image" name="submit">
     </form>
 
+    <form method="post" id="userform" action="thisform.php">
+      <table>
+        <tr>
+          <td>Trouble Type</td>
+          <td>
+            <input type="checkbox" name="checkboxvar[]" value="Option One">1<br>
+            <input type="checkbox" name="checkboxvar[]" value="Option Two">2<br>
+            <input type="checkbox" name="checkboxvar[]" value="Option Three">3<br>
+          </td>
+        </tr>
+      </table>
+
+      <input type="submit" class="buttons">
+
+    </form>
+
+    <?php
+      if (isset($_POST['checkboxvar'])) {
+        print_r($_POST['checkboxvar']);
+      }
+    ?>
+
   </body>
 </html>

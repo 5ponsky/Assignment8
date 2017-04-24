@@ -1,7 +1,7 @@
 <?php
   // target_dir := specifices the directory where the file is going to be placed
   // target_file := specifices the path of the file to be uploaded
-  // uploadOk := whether or not the file is a real imageFileType
+  // uploadOk := flag determining whether or not the file is legal
   // imageFileType := the file extension of the file
 
   $target_dir = "uploads/";
