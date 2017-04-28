@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 
 <html>
@@ -7,13 +9,28 @@
     <form action="upload.php" method="post" enctype="multipart/form-data">
       Select an image to upload:
       <input type="file" name="fileToUpload" id="fileToUpload">
+
+      <br>
       <input type="submit" value="Upload Image" name="submit">
     </form>
 
+    <br>
+    <br>
+
     <form method="post" id="userform" action="thisform.php">
       <table>
+        <tr style="border: 1px solid black; align: center;">
+          <td style="border: 1px solid black; align: center;">Flag</td>
+          <td style="border: 1px solid black; align: center;">Files:</td>
+        </tr>
+
+        <?php
+          $files = array_slice(scandir($target_dir), 2);
+          for($i = 0; $i < $files.size; $i++) {
+            print("<tr><td>" . $files[$i] . "</td></tr>\n");
+          }
+        ?>
         <tr>
-          <td>Trouble Type</td>
           <td>
             <input type="checkbox" name="checkboxvar[]" value="Option One">1<br>
             <input type="checkbox" name="checkboxvar[]" value="Option Two">2<br>
@@ -21,8 +38,6 @@
           </td>
         </tr>
       </table>
-
-      <input type="submit" class="buttons">
 
     </form>
 
